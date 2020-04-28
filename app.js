@@ -53,6 +53,11 @@ app.get('/movie', (req, res) => {
     returnData = returnData.filter(data => data.genre.toLowerCase().includes(genreLC));
   }
 
+  if(country) {
+    let countryLC = country.toLowerCase();
+    returnData = returnData.filter(data => data.genre.toLowerCase().includes(countryLC) )
+  }
+
   // When searching by country, users are searching for whether the Movie's country includes a specified string. The search should be case insensitive.
 
   // When searching by average vote, users are searching for Movies with an avg_vote that is greater than or equal to the supplied number.
